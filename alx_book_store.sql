@@ -1,6 +1,6 @@
 import mysql.connector
 
-# Establish a connection to MySQL
+--# Establish a connection to MySQL
 connection = mysql.connector.connect(
     host='localhost',     
     user='root',   
@@ -9,12 +9,12 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-# Create the database
+--# Create the database
 cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
 cursor.execute("USE alx_book_store;")
 connection.database = "alx_book_store"
 
-# Create the Authors table
+--# Create the Authors table
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS Authors (
         author_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -22,7 +22,7 @@ cursor.execute("""
     );
 """)
 
-# Create the Books table
+--# Create the Books table
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS Books (
         book_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -34,7 +34,7 @@ cursor.execute("""
     );
 """)
 
-# Create the Customers table
+--# Create the Customers table
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS Customers (
         customer_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -44,7 +44,7 @@ cursor.execute("""
     );
 """)
 
-# Create the Orders table
+--# Create the Orders table
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS Orders (
         order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -54,7 +54,7 @@ cursor.execute("""
     );
 """)
 
-# Create the Order_Details table
+--# Create the Order_Details table
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS Order_Details (
         orderdetailid INT AUTO_INCREMENT PRIMARY KEY,
@@ -66,7 +66,7 @@ cursor.execute("""
     );
 """)
 
-# Commit the changes and close the connection
+--# Commit the changes and close the connection
 connection.commit()
 cursor.close()
 connection.close()
